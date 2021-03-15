@@ -1,3 +1,16 @@
+# Notes
+
+## Install  
+[Axios Hooks](https://www.npmjs.com/package/axios-hooks)  
+`npm install axios axios-hooks`  
+
+[Material UI](https://material-ui.com/getting-started/installation/)  
+```
+npm install @material-ui/core
+npm install @material-ui/icons
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
