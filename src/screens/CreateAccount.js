@@ -4,7 +4,7 @@ export const CreateAccount = () => {
 
     return (
         <div>
-            Create Account
+            <button>Create Account</button>
         </div>
     );
 }
