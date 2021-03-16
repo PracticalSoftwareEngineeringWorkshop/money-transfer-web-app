@@ -3,10 +3,11 @@ import useAxios from 'axios-hooks';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import CurrencyFormat from 'react-currency-format';
+import { API_BASE_URL } from '../../utils/Constants';
 
 const ListAccounts = () => {
 
-    const [{ data, loading, error }, refetch] = useAxios('http://localhost:8080/api/account/list');
+    const [{ data, loading, error }, refetch] = useAxios(`${API_BASE_URL}/account/list`);
 
     if (loading) return <p><CircularProgress /></p>
 

@@ -3,12 +3,13 @@ import useAxios from 'axios-hooks';
 import { useParams } from "react-router-dom";
 import CurrencyFormat from 'react-currency-format';
 import { Grid } from '@material-ui/core';
+import { API_BASE_URL } from '../../utils/Constants';
 
 const ShowAccount = () => {
 
     const { accountId } = useParams();
 
-    const [{ data, loading, error }] = useAxios(`http://localhost:8080/api/account/${accountId}`);
+    const [{ data, loading, error }] = useAxios(`${API_BASE_URL}/account/${accountId}`);
 
     if (loading) return <p>Loading ...</p>
 

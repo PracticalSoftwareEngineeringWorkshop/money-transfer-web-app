@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Grid } from '@material-ui/core';
 import axios from 'axios';
+import { API_BASE_URL } from '../../utils/Constants';
 
 const CreateAccount = ({ history }) => {
 
@@ -19,7 +20,7 @@ const CreateAccount = ({ history }) => {
     useEffect(() => {
         if (submitForm === true) {
             axios
-                .post('http://localhost:8080/api/account/create',
+                .post(`${API_BASE_URL}/account/create`,
                     {
                         'firstName': firstName,
                         'lastName': lastName,

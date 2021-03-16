@@ -10,6 +10,8 @@ npm install @material-ui/core
 npm install @material-ui/icons
 ```
 
+### Notes
+[Adding Custom Environment Variables] (https://create-react-app.dev/docs/adding-custom-environment-variables/)
 
 # Getting Started with Create React App
 
