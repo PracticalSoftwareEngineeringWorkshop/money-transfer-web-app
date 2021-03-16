@@ -1,7 +1,7 @@
-import { CreateAccount } from './screens/CreateAccount';
-import { ListAccounts } from './screens/ListAccounts';
+import { CreateAccount, ListAccounts } from './components';
 
 const App = () => {
+  // <> </> is a React Fragment
   return (
     <>
       <ListAccounts />

@@ -3,7 +3,7 @@ import useAxios from 'axios-hooks';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 
-export const ListAccounts = () => {
+const ListAccounts = () => {
 
     const [{ data, loading, error }, refetch] = useAxios('http://localhost:8080/api/account/list');
 
@@ -52,3 +52,5 @@ export const ListAccounts = () => {
         </div>
     );
 }
+
+export default ListAccounts;
