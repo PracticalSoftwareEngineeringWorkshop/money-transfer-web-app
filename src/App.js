@@ -1,21 +1,29 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { CreateAccount, ListAccounts } from './components';
+import { CreateAccount, ListAccounts, ShowAccount, Header } from './components';
 
 const App = () => {
   // <> </> is a React Fragment
   return (
-    <Switch>
-      <Route
-        exact
-        path='/'
-        render={(props) => <ListAccounts {...props} />} />
+    <>
+      <Header />
+      <Switch>
+        <Route
+          exact
+          path='/'
+          render={(props) => <ListAccounts {...props} />} />
 
-      <Route
-        exact
-        path='/create'
-        render={(props) => <CreateAccount {...props} />} />
-    </Switch>
+        <Route
+          exact
+          path='/create'
+          render={(props) => <CreateAccount {...props} />} />
+
+        <Route
+          exact
+          path='/show/:accountId'
+          render={(props) => <ShowAccount {...props} />} />
+      </Switch>
+    </>
   );
 }
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import useAxios from 'axios-hooks';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import CurrencyFormat from 'react-currency-format';
 
 const ListAccounts = () => {
 
     const [{ data, loading, error }, refetch] = useAxios('http://localhost:8080/api/account/list');
 
-    if (loading) return <p>Loading ...</p>
+    if (loading) return <p><CircularProgress /></p>
 
     if (error) return <p>Error!</p>
 
@@ -41,7 +42,7 @@ const ListAccounts = () => {
                                     <TableCell>{row.email}</TableCell>
                                     <TableCell>{row.phoneNumber}</TableCell>
                                     <TableCell>{row.pin}</TableCell>
-                                    <TableCell>{row.balance}</TableCell>
+                                    <TableCell><CurrencyFormat value={row.balance} displayType={'text'} thousandSeparator={true} prefix={'ETB '} /></TableCell>
                                     <TableCell>{row.isVerified.toString()}</TableCell>
                                 </TableRow>
                             );

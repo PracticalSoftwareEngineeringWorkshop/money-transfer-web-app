@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Grid } from '@material-ui/core';
 import axios from 'axios';
 
 const CreateAccount = ({ history }) => {
@@ -40,65 +40,73 @@ const CreateAccount = ({ history }) => {
         }
     }, [email, firstName, lastName, phoneNumber, pin, submitForm, history])
 
+    // https://material-ui.com/components/grid/#grid
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    type="text"
-                    placeholder="First Name"
-                    name="firstName"
-                    variant="outlined"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    required
-                    autoFocus
-                />
+        <form onSubmit={handleSubmit}>
 
-                <TextField
-                    type="text"
-                    placeholder="Last Name"
-                    name="lastName"
-                    variant="outlined"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    required
-                />
-
-                <TextField
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    variant="outlined"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-
-                <TextField
-                    type="tel"
-                    placeholder="Phone Number"
-                    name="phoneNumber"
-                    variant="outlined"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    required
-                />
-
-                <TextField
-                    type="password"
-                    placeholder="Pin"
-                    name="pin"
-                    variant="outlined"
-                    value={pin}
-                    onChange={(e) => setPin(e.target.value)}
-                    required
-                />
-                <Button type="button" color="primary" onClick={(e) => handleSubmit()}>
-                    Create Account
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <TextField
+                        type="text"
+                        placeholder="First Name"
+                        name="firstName"
+                        variant="outlined"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                        autoFocus
+                    />
+                </Grid>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <TextField
+                        type="text"
+                        placeholder="Last Name"
+                        name="lastName"
+                        variant="outlined"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                    />
+                </Grid>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <TextField
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        variant="outlined"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    /></Grid>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <TextField
+                        type="tel"
+                        placeholder="Phone Number"
+                        name="phoneNumber"
+                        variant="outlined"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        required
+                    /></Grid>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <TextField
+                        type="password"
+                        placeholder="Pin"
+                        name="pin"
+                        variant="outlined"
+                        value={pin}
+                        onChange={(e) => setPin(e.target.value)}
+                        required
+                    /></Grid>
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <Button type="button" color="primary" onClick={(e) => handleSubmit()}>
+                        Create Account
                 </Button>
-            </form>
+                </Grid>
 
-        </div>
+            </Grid>
+        </form>
+
     );
 }
 
