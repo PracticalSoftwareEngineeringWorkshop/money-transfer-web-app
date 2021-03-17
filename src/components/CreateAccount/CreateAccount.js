@@ -2,8 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Grid } from '@material-ui/core';
 import axios from 'axios';
 import { API_BASE_URL } from '../../utils/Constants';
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+    grid: {
+        flex: 1,
+        padding: 20
+    }
+})
 
 const CreateAccount = ({ history }) => {
+
+    const classes = useStyles();
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -45,7 +55,7 @@ const CreateAccount = ({ history }) => {
     return (
         <form onSubmit={handleSubmit}>
 
-            <Grid container spacing={3}>
+            <Grid container spacing={3} className={classes.grid}>
                 <Grid item xs={12} sm={4} md={3} lg={2}>
                     <TextField
                         type="text"
@@ -100,7 +110,7 @@ const CreateAccount = ({ history }) => {
                         required
                     /></Grid>
                 <Grid item xs={12} sm={4} md={3} lg={2}>
-                    <Button type="button" color="primary" onClick={(e) => handleSubmit()}>
+                    <Button type="button" color="primary" onClick={(e) => handleSubmit()} variant="contained">
                         Create Account
                 </Button>
                 </Grid>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, Button, Link } from '@material-ui/core';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,9 +29,12 @@ const Header = () => {
                     <MonetizationOnIcon />
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                    Money Transfer App
-            </Typography>
+                    <Link href="/" color="inherit">
+                        Money Transfer App
+                    </Link>
+                </Typography>
                 <Button color="inherit" onClick={() => history.push('/create')}>Create Account</Button>
+                <Button color="inherit" onClick={() => history.push('/show/1')}>Show Account</Button>
             </Toolbar>
         </AppBar>
     );
