@@ -1,9 +1,20 @@
 import React from 'react';
 import useAxios from 'axios-hooks';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@material-ui/core';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    CircularProgress,
+    Checkbox
+} from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import CurrencyFormat from 'react-currency-format';
 import { API_BASE_URL } from '../../utils/Constants';
+import {Link} from "react-router-dom";
+import {convertPinToStars} from "../../utils/helper";
 
 const ListAccounts = () => {
 
@@ -26,6 +37,7 @@ const ListAccounts = () => {
                             <TableCell>Last Name</TableCell>
                             <TableCell>Email</TableCell>
                             <TableCell>Phone Number</TableCell>
+                            <TableCell>Date of Birth</TableCell>
                             <TableCell>PIN</TableCell>
                             <TableCell>Balance</TableCell>
                             <TableCell>Is Verified?</TableCell>
@@ -36,15 +48,18 @@ const ListAccounts = () => {
                             return (
                                 <TableRow key={row.id}>
                                     <TableCell component="th" scope="row">
-                                        {row.id}
+                                        <Link to={`/show/${row.id}`}>{row.id}</Link>
                                     </TableCell>
                                     <TableCell>{row.firstName}</TableCell>
                                     <TableCell>{row.lastName}</TableCell>
                                     <TableCell>{row.email}</TableCell>
                                     <TableCell>{row.phoneNumber}</TableCell>
-                                    <TableCell>{row.pin}</TableCell>
+                                    <TableCell>{row.dateOfBirth}</TableCell>
+                                    <TableCell>{convertPinToStars(row.pin)}</TableCell>
                                     <TableCell><CurrencyFormat value={row.balance} displayType={'text'} thousandSeparator={true} prefix={'ETB '} /></TableCell>
-                                    <TableCell>{row.isVerified.toString()}</TableCell>
+                                    <TableCell>
+                                        <Checkbox disabled checked={row.isVerified} />
+                                    </TableCell>
                                 </TableRow>
                             );
                         })}

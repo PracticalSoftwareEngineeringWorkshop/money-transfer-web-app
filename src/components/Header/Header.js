@@ -34,7 +34,7 @@ const Header = () => {
                     </Link>
                 </Typography>
                 <Button color="inherit" onClick={() => history.push('/create')}>Create Account</Button>
-                <Button color="inherit" onClick={() => history.push('/show/1')}>Show Account</Button>
+                {/*<Button color="inherit" onClick={() => history.push('/show/1')}>Show Account</Button>*/}
             </Toolbar>
         </AppBar>
     );
