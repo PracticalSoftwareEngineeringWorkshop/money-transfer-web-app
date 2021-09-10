@@ -1,3 +1,5 @@
+![CI/CD](https://github.com/PracticalSoftwareEngineeringWorkshop/money-transfer-web-app/workflows/CI/CD/badge.svg)
+
 # Notes
 # Money Transfer Web App
 A ReactJS app that provides a view for Account and money transfer by consuming the Money Transfer API.
@@ -42,6 +44,11 @@ npm install @material-ui/icons
 [Currency Formatter](https://www.npmjs.com/package/react-currency-format)  
 `npm install react-currency-format --save`
 
+### Deploy to github pages
+Run `npm run deploy`  
+
+## Github Actions
+[Setting up a CI/CD workflow on GitHub Actions for a React App (with GitHub Pages and Codecov)](https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-react-app-with-github-pages-and-codecov-4hnp)
 
 ### Notes
 [Deploying React app to Heroku with zero configuration](https://blog.heroku.com/deploying-react-with-zero-configuration)    
