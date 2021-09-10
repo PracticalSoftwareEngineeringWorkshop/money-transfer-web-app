@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/money-transfer-web-app/static/js/main.06bc59da.chunk.js",
-    "main.js.map": "/money-transfer-web-app/static/js/main.06bc59da.chunk.js.map",
+    "main.js": "/money-transfer-web-app/static/js/main.78c35eea.chunk.js",
+    "main.js.map": "/money-transfer-web-app/static/js/main.78c35eea.chunk.js.map",
     "runtime-main.js": "/money-transfer-web-app/static/js/runtime-main.3ddacb90.js",
     "runtime-main.js.map": "/money-transfer-web-app/static/js/runtime-main.3ddacb90.js.map",
-    "static/js/2.fefc0471.chunk.js": "/money-transfer-web-app/static/js/2.fefc0471.chunk.js",
-    "static/js/2.fefc0471.chunk.js.map": "/money-transfer-web-app/static/js/2.fefc0471.chunk.js.map",
+    "static/js/2.8f0e63fc.chunk.js": "/money-transfer-web-app/static/js/2.8f0e63fc.chunk.js",
+    "static/js/2.8f0e63fc.chunk.js.map": "/money-transfer-web-app/static/js/2.8f0e63fc.chunk.js.map",
     "static/js/3.0ca954de.chunk.js": "/money-transfer-web-app/static/js/3.0ca954de.chunk.js",
     "static/js/3.0ca954de.chunk.js.map": "/money-transfer-web-app/static/js/3.0ca954de.chunk.js.map",
     "index.html": "/money-transfer-web-app/index.html",
-    "static/js/2.fefc0471.chunk.js.LICENSE.txt": "/money-transfer-web-app/static/js/2.fefc0471.chunk.js.LICENSE.txt"
+    "static/js/2.8f0e63fc.chunk.js.LICENSE.txt": "/money-transfer-web-app/static/js/2.8f0e63fc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3ddacb90.js",
-    "static/js/2.fefc0471.chunk.js",
-    "static/js/main.06bc59da.chunk.js"
+    "static/js/2.8f0e63fc.chunk.js",
+    "static/js/main.78c35eea.chunk.js"
   ]
 }
