@@ -44,6 +44,76 @@ npm install @material-ui/icons
 [Currency Formatter](https://www.npmjs.com/package/react-currency-format)  
 `npm install react-currency-format --save`
 
+
+## Github actions
+1. `npm install gh-pages --save-dev`
+2. in package.json
+```
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
+3. IN .git/workflows/main.yml
+```
+name: CI/CD
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build_test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]  # [10.x, 12.x, 14.x, 15.x, 16.x]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+
+#      - name: Run the tests
+#        run: npm test --passWithNoTests
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          # Go here to generate a Personal access token https://github.com/settings/tokens
+          # Add it in Secrets with ACTIONS_DEPLOY_ACCESS_TOKEN name
+          repository: ${{ github.repository }}    # The github.repository variable will automatically get the name of your repository.
+```
+4. Go to https://github.com/settings/tokens to generate a Personal access token and Add it in Secrets with ACTIONS_DEPLOY_ACCESS_TOKEN name
+
 ### Deploy to github pages
 Run `npm run deploy`  
 
