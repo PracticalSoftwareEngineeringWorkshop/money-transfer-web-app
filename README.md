@@ -57,7 +57,9 @@ npm install @material-ui/icons
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-```
+```   
+and  
+`  "homepage": "https://practicalsoftwareengineeringworkshop.github.io/money-transfer-web-app/",`
 3. IN .git/workflows/main.yml
 ```
 name: CI/CD
